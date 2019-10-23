@@ -17,7 +17,8 @@ public class Main {
 
             System.out.println("ESPAÑOLES, he salido");
         }else{
-            System.out.println("Era una broma, o quizá no...");        }
-
+            System.out.println("Era una broma, o quizá no...");
+            System.out.println("TE QUIERO NENE");
+        }
     }
 }
