@@ -1,4 +1,4 @@
-package com.lapices;
+package com.cursa;
 
 public class Main {
 
