@@ -17,7 +17,7 @@ public class Main {
 
             System.out.println("ESPAÑOLES, he salido");
         }else{
-            System.out.println("Era una broma");        }
+            System.out.println("Era una broma o no");        }
 
     }
 }
