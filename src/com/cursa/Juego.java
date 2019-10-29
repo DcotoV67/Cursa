@@ -1,7 +1,11 @@
 package com.cursa;
 
-import javax.crypto.spec.PSource;
-
 public class Juego {
+
+    void iniciarJuego(){
+        Menu menu = new Menu();
+
+        menu.abrir();
+    }
 
 }
