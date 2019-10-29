@@ -4,7 +4,7 @@ public class Vehiculo {
     private String bicicleta = "bicicleta";
     private String moto = "moto";
     private String coche = "coche";
-    private String camion = "camion";
+    private String camion = "camión";
 
     public void setBicicleta(String bicicleta) {
         this.bicicleta = bicicleta;

@@ -10,7 +10,7 @@ public class Menu {
 
         Juego juego = new Juego();
         Competicion competicion = new Competicion();
-
+        Jugador jugador = new Jugador();
         boolean jugar = true;
         int opcion;
 
@@ -38,6 +38,7 @@ public class Menu {
 
                 case 3:
                     System.out.println("Opción 3");
+                    jugador.elegirVehiculo();
                     break;
 
                 case 4:
