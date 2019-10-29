@@ -9,32 +9,35 @@ public class Menu {
         Scanner scanner = new Scanner(System.in);
 
         Juego juego = new Juego();
+        Competicion competicion = new Competicion();
 
         boolean jugar = true;
-        int opcion = 0;
+        int opcion;
 
         while(jugar){
 
+            System.out.println("");
             System.out.println("¿Que quieres hacer?");
             System.out.println("");
             System.out.println("1 - Configuració de la competició");
             System.out.println("2 - Resultats/Palmarès/ClassificacióGeneral");
             System.out.println("3 - Jugar");
             System.out.println("4 - Acabar");
+            System.out.println("");
 
             opcion = scanner.nextInt();
 
             switch (opcion){
                 case 1:
-
+                    competicion.configuracion();
                     break;
 
                 case 2:
-
+                    System.out.println("Opción 2");
                     break;
 
                 case 3:
-
+                    System.out.println("Opción 3");
                     break;
 
                 case 4:
