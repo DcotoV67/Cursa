@@ -6,10 +6,23 @@ public class Menu {
 
     public void abrir() {
 
+        Scanner scanner = new Scanner(System.in);
+
+        Juego juego = new Juego();
+
         boolean jugar = true;
         int opcion = 0;
 
-        while(!jugar){
+        while(jugar){
+
+            System.out.println("¿Que quieres hacer?");
+            System.out.println("");
+            System.out.println("1 - Configuració de la competició");
+            System.out.println("2 - Resultats/Palmarès/ClassificacióGeneral");
+            System.out.println("3 - Jugar");
+            System.out.println("4 - Acabar");
+
+            opcion = scanner.nextInt();
 
             switch (opcion){
                 case 1:
@@ -36,6 +49,8 @@ public class Menu {
             }
 
         }
+
+        juego.acabarJuego();
 
     }
 }
