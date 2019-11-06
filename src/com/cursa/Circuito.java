@@ -2,6 +2,6 @@ package com.cursa;
 
 public class Circuito {
 
-    String nombre;
+    String nombre = " ";
 
 }

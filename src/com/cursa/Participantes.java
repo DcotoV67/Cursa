@@ -5,11 +5,6 @@ public class Participantes {
     String nombre;
     String vehiculo;
 
-    void elegirNombreAleatorio(){
-
-        nombre = "CPU 01";
-    }
-
     void actualizarTiempo(){
 
         tiempo = Math.random()*179+1;

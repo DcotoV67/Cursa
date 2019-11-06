@@ -31,6 +31,8 @@ public class Menu {
             switch (opcion){
                 case 1:
                     competicion.configuracion();
+                    competicion.setListaParticipantes();
+                    competicion.setListaCircuito();
                     break;
 
                 case 2:
@@ -40,7 +42,6 @@ public class Menu {
                 case 3:
                     System.out.println("Opción 3");
                     jugador.elegirVehiculo();
-                    participante.elegirNombreAleatorio();
                     participante.actualizarTiempo();
                     participante.elegirVehiculo(jugador.vehiculo);
                     break;
