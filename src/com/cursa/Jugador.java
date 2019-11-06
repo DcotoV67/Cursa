@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class Jugador {
     String nombre = "";
 
-    Vehiculo vehiculo = new Vehiculo();
+    String vehiculo = "";
 
-    void elegirVehiculo (){
+    String elegirVehiculo (){
         Scanner in = new Scanner(System.in);
 
         System.out.println("Con que vehiculo quieres competir? ");
@@ -22,20 +22,20 @@ public class Jugador {
 
         switch (opcion){
             case 1:
-                System.out.println("Has elegido competir con " + vehiculo.getBicicleta());
-                vehiculo.getBicicleta();
+                vehiculo = "Bicicleta";
+                System.out.println("Has elegido competir con " + vehiculo);
                 break;
             case 2:
-                System.out.println("Has elegido competir con " + vehiculo.getCamion());
-                vehiculo.getCamion();
+                vehiculo = "Camion";
+                System.out.println("Has elegido competir con " + vehiculo);
                 break;
             case 3:
-                System.out.println("Has elegido competir con " + vehiculo.getCoche());
-                vehiculo.getCoche();
+                vehiculo = "Coche";
+                System.out.println("Has elegido competir con " + vehiculo);
                 break;
             case 4:
-                System.out.println("Has elegido competir con " + vehiculo.getMoto());
-                vehiculo.getMoto();
+                vehiculo = "Moto";
+                System.out.println("Has elegido competir con " + vehiculo);
                 break;
 
             default:
@@ -43,6 +43,7 @@ public class Jugador {
                 break;
         }
 
+        return vehiculo;
     }
 
 }

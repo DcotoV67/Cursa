@@ -11,6 +11,7 @@ public class Menu {
         Juego juego = new Juego();
         Competicion competicion = new Competicion();
         Jugador jugador = new Jugador();
+        Participantes participante  = new Participantes();
         boolean jugar = true;
         int opcion;
 
@@ -39,11 +40,16 @@ public class Menu {
                 case 3:
                     System.out.println("Opción 3");
                     jugador.elegirVehiculo();
+                    participante.elegirNombreAleatorio();
+                    participante.actualizarTiempo();
+                    participante.elegirVehiculo(jugador.vehiculo);
                     break;
 
                 case 4:
-
                     jugar = false;
+                    System.out.println(participante.vehiculo + " / " + jugador.vehiculo);
+                    System.out.println(participante.nombre);
+                    System.out.println(participante.tiempo);
                     break;
 
                 default:
