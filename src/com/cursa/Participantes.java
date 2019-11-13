@@ -7,7 +7,7 @@ public class Participantes {
 
     void actualizarTiempo(){
 
-        tiempo = Math.random()*179+1;
+        tiempo = Math.round(Math.random()*179+1);
     }
 
     void elegirVehiculo(String vehiculo2){

@@ -37,6 +37,12 @@ public class Menu {
 
                 case 2:
                     System.out.println("Opción 2");
+                    jugador.asignarVehiculo(competicion.listaParticipantes);
+                    for (int i = 0; i < competicion.qtadParticipantes; i++) {
+
+                        System.out.println(competicion.listaParticipantes[i].nombre + " / " + competicion.listaParticipantes[i].tiempo + " / " + competicion.listaParticipantes[i].vehiculo);
+
+                    }
                     break;
 
                 case 3:
@@ -49,8 +55,7 @@ public class Menu {
                 case 4:
                     jugar = false;
                     System.out.println(participante.vehiculo + " / " + jugador.vehiculo);
-                    System.out.println(participante.nombre);
-                    System.out.println(participante.tiempo);
+
                     break;
 
                 default:

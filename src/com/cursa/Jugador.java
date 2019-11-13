@@ -7,7 +7,7 @@ public class Jugador {
 
     String vehiculo = "";
 
-    String elegirVehiculo (){
+    String elegirVehiculo() {
         Scanner in = new Scanner(System.in);
 
         System.out.println("Con que vehiculo quieres competir? ");
@@ -20,7 +20,7 @@ public class Jugador {
         int opcion = in.nextInt();
 
 
-        switch (opcion){
+        switch (opcion) {
             case 1:
                 vehiculo = "Bicicleta";
                 System.out.println("Has elegido competir con " + vehiculo);
@@ -46,4 +46,13 @@ public class Jugador {
         return vehiculo;
     }
 
+    void asignarVehiculo(Participantes[] listaParticipantes){
+
+        for (int i = 0; i < listaParticipantes.length; i++) {
+            listaParticipantes[i].vehiculo = vehiculo;
+
+        }
+    }
 }
+
+
