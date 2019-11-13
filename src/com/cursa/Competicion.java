@@ -46,14 +46,14 @@ public class Competicion {
             participantes.actualizarTiempo();
 
             if (i == 0) {
-                listaParticipantes[i].nombre = jugador.nombre;
-                listaParticipantes[i].tiempo = participantes.tiempo;
+                listaParticipantes[i].setNombre(jugador.nombre);
+                listaParticipantes[i].setTiempo(participantes.getTiempo());
             } else {
-                listaParticipantes[i].nombre = "CPU " + i;
-                listaParticipantes[i].tiempo = participantes.tiempo;
+                listaParticipantes[i].setNombre("CPU " + i);
+                listaParticipantes[i].setTiempo(participantes.getTiempo());
 
             }
-            System.out.println(listaParticipantes[i].nombre + " Tiempo del participante: " + listaParticipantes[i].tiempo);
+            System.out.println(listaParticipantes[i].getNombre() + " Tiempo del participante: " + listaParticipantes[i].getTiempo());
 
         }
 
