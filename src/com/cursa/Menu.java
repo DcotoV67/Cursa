@@ -40,7 +40,7 @@ public class Menu {
                     jugador.asignarVehiculo(competicion.listaParticipantes);
                     for (int i = 0; i < competicion.qtadParticipantes; i++) {
 
-                        System.out.println(competicion.listaParticipantes[i].nombre + " / " + competicion.listaParticipantes[i].tiempo + " / " + competicion.listaParticipantes[i].vehiculo);
+                        System.out.println(competicion.listaParticipantes.get(i).nombre +  " / " + competicion.listaParticipantes.get(i).vehiculo);
 
                     }
                     break;
@@ -50,6 +50,7 @@ public class Menu {
                     jugador.elegirVehiculo();
                     participante.actualizarTiempo();
                     participante.elegirVehiculo(jugador.vehiculo);
+                    jugador.competir(competicion.listaCircuitos, competicion.listaParticipantes);
                     break;
 
                 case 4:

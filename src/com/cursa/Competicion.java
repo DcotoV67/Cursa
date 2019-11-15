@@ -1,5 +1,6 @@
 package com.cursa;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Competicion {
@@ -9,7 +10,7 @@ public class Competicion {
     Participantes participantes = new Participantes();
     Circuito circuito = new Circuito();
 
-    Participantes[] listaParticipantes;
+    ArrayList<Participantes> listaParticipantes = new ArrayList<>();
     Circuito[] listaCircuitos;
 
 
@@ -26,40 +27,31 @@ public class Competicion {
         System.out.println("¿Cuantos participantes tiene la competición?");
         qtadParticipantes = scanner.nextInt();
 
-        listaParticipantes = new Participantes[qtadParticipantes];
-
         System.out.println("¿Cuantos circuitos tiene la competición?");
         qtadCircuitos = scanner.nextInt();
 
         listaCircuitos = new Circuito[qtadCircuitos];
     }
 
-    Participantes[] setListaParticipantes() {
+    ArrayList<Participantes> setListaParticipantes() {
 
         for (int i = 0; i < qtadParticipantes; i++) {
 
-            listaParticipantes[i] = new Participantes();
-        }
-
-        for (int i = 0; i < listaParticipantes.length; i++) {
-
-            participantes.actualizarTiempo();
 
             if (i == 0) {
-                listaParticipantes[i].setNombre(jugador.nombre);
-                listaParticipantes[i].setTiempo(participantes.getTiempo());
+                listaParticipantes.get(i).setNombre(jugador.nombre);
             } else {
-                listaParticipantes[i].setNombre("CPU " + i);
-                listaParticipantes[i].setTiempo(participantes.getTiempo());
+                listaParticipantes.get(i).setNombre("CPU " + i);
 
             }
-            System.out.println(listaParticipantes[i].getNombre() + " Tiempo del participante: " + listaParticipantes[i].getTiempo());
+            System.out.println(listaParticipantes.get(i).getNombre());
 
         }
 
             return listaParticipantes;
     }
-    void setListaCircuito () {
+
+    Circuito[] setListaCircuito () {
         for (int j = 0; j < qtadCircuitos; j++) {
 
             listaCircuitos[j] = circuito;
@@ -67,6 +59,10 @@ public class Competicion {
             listaCircuitos[j].nombre = "Circuito "+ (j+1);
 
             System.out.println(listaCircuitos[j].nombre);
+
         }
+
+        return listaCircuitos;
     }
+
 }

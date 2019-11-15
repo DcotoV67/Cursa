@@ -1,8 +1,9 @@
 package com.cursa;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Jugador {
+public class Jugador{
     String nombre = "";
 
     String vehiculo = "";
@@ -46,13 +47,33 @@ public class Jugador {
         return vehiculo;
     }
 
-    void asignarVehiculo(Participantes[] listaParticipantes){
+    void asignarVehiculo(ArrayList<Participantes> listaParticipantes){
 
-        for (int i = 0; i < listaParticipantes.length; i++) {
-            listaParticipantes[i].vehiculo = vehiculo;
+        for (int i = 0; i < listaParticipantes.size(); i++) {
+            listaParticipantes.get(i).vehiculo = vehiculo;
 
         }
     }
+
+    void competir(Circuito[] listaCircuitos, ArrayList<Participantes> listaParticipantes){
+
+        for (int i = 0; i < listaParticipantes.size(); i++) {
+            listaParticipantes.get(i).actualizarTiempo();
+        }
+
+        listaParticipantes.sort(Participantes::compareTo);
+
+        for (int i = 0; i < listaCircuitos.length; i++) {
+            System.out.println(listaCircuitos[i].nombre);
+
+            for (int j = 0; j < listaParticipantes.size(); j++) {
+                System.out.println(listaParticipantes.get(j).nombre);
+            }
+
+        }
+
+    }
+
 }
 
 

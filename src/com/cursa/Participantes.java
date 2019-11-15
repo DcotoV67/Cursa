@@ -1,13 +1,13 @@
 package com.cursa;
 
-public class Participantes {
-    private double  tiempo;
-    private String nombre;
-    private String vehiculo;
+public class Participantes implements Comparable<Participantes>{
+    double  tiempo;
+    String nombre;
+    protected String vehiculo;
     private float puntuacion;
 
     void actualizarTiempo(){
-        tiempo = Math.round(Math.random()*179+1);
+        tiempo = Math.round(Math.random()*99+1);
     }
 
     void elegirVehiculo(String vehiculo2){
@@ -44,5 +44,17 @@ public class Participantes {
 
     public void setPuntuacion(float puntuacion) {
         this.puntuacion = puntuacion;
+    }
+
+    @Override
+    public int compareTo(Participantes participantes) {
+        if (participantes.tiempo == this.tiempo) {
+            return 0;
+        } else if (participantes.tiempo > this.tiempo) {
+            return 1;
+        } else if (participantes.tiempo < this.tiempo) {
+            return -1;
+        }
+        return 0;
     }
 }
