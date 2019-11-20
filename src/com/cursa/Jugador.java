@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Jugador{
+    int posicion;
+
     String nombre = "";
 
     String vehiculo = "";
@@ -57,21 +59,55 @@ public class Jugador{
 
     void competir(Circuito[] listaCircuitos, ArrayList<Participantes> listaParticipantes){
 
-        for (int i = 0; i < listaParticipantes.size(); i++) {
-            listaParticipantes.get(i).actualizarTiempo();
-        }
-
-        listaParticipantes.sort(Participantes::compareTo);
 
         for (int i = 0; i < listaCircuitos.length; i++) {
             System.out.println(listaCircuitos[i].nombre);
+            System.out.println("");
+            for (int k = 0; k < listaParticipantes.size(); k++) {
+                listaParticipantes.get(k).actualizarTiempo();
+            }
+
+            listaParticipantes.sort(Participantes::compareTo);
 
             for (int j = 0; j < listaParticipantes.size(); j++) {
-                System.out.println(listaParticipantes.get(j).nombre);
+
+                posicion = j;
+
+                switch (posicion) {
+                    case 0:
+                        listaParticipantes.get(j).setPuntuacion(16);
+                        System.out.println(listaParticipantes.get(j).getNombre() + " -> " + listaParticipantes.get(j).getTiempo() + " -> " + listaParticipantes.get(j).getPuntuacion() + "pts");
+                    break;
+
+                    case 1:
+                        listaParticipantes.get(j).setPuntuacion(12);
+                        System.out.println(listaParticipantes.get(j).getNombre() + " -> " + listaParticipantes.get(j).getTiempo() + " -> " + listaParticipantes.get(j).getPuntuacion() + "pts");
+                    break;
+
+                    case 2:
+                        listaParticipantes.get(j).setPuntuacion(8);
+                        System.out.println(listaParticipantes.get(j).getNombre() + " -> " + listaParticipantes.get(j).getTiempo() + " -> " + listaParticipantes.get(j).getPuntuacion() + "pts");
+                    break;
+
+                    case 3:
+                        listaParticipantes.get(j).setPuntuacion(4);
+                        System.out.println(listaParticipantes.get(j).getNombre() + " -> " + listaParticipantes.get(j).getTiempo() + " -> " + listaParticipantes.get(j).getPuntuacion() + "pts");
+                    break;
+
+                    default:
+                        listaParticipantes.get(j).setPuntuacion(2);
+                        System.out.println(listaParticipantes.get(j).getNombre() + " -> " + listaParticipantes.get(j).getTiempo() + " -> " + listaParticipantes.get(j).getPuntuacion() + "pts");
+                    break;
+
+                }
             }
+
+            System.out.println("");
+            System.out.println("---------------------");
 
         }
 
+        listaParticipantes.clear();
     }
 
 }

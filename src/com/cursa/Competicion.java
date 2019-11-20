@@ -31,12 +31,15 @@ public class Competicion {
         qtadCircuitos = scanner.nextInt();
 
         listaCircuitos = new Circuito[qtadCircuitos];
+
+        scanner.nextLine();
     }
 
     ArrayList<Participantes> setListaParticipantes() {
 
         for (int i = 0; i < qtadParticipantes; i++) {
 
+            listaParticipantes.add(new Participantes());
 
             if (i == 0) {
                 listaParticipantes.get(i).setNombre(jugador.nombre);
@@ -54,7 +57,7 @@ public class Competicion {
     Circuito[] setListaCircuito () {
         for (int j = 0; j < qtadCircuitos; j++) {
 
-            listaCircuitos[j] = circuito;
+            listaCircuitos[j] = new Circuito();
 
             listaCircuitos[j].nombre = "Circuito "+ (j+1);
 

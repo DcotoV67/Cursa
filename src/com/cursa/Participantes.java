@@ -4,7 +4,7 @@ public class Participantes implements Comparable<Participantes>{
     double  tiempo;
     String nombre;
     protected String vehiculo;
-    private float puntuacion;
+    private int puntuacion;
 
     void actualizarTiempo(){
         tiempo = Math.round(Math.random()*99+1);
@@ -38,11 +38,11 @@ public class Participantes implements Comparable<Participantes>{
         this.vehiculo = vehiculo;
     }
 
-    public float getPuntuacion() {
+    public int getPuntuacion() {
         return puntuacion;
     }
 
-    public void setPuntuacion(float puntuacion) {
+    public void setPuntuacion(int puntuacion) {
         this.puntuacion = puntuacion;
     }
 
@@ -51,9 +51,9 @@ public class Participantes implements Comparable<Participantes>{
         if (participantes.tiempo == this.tiempo) {
             return 0;
         } else if (participantes.tiempo > this.tiempo) {
-            return 1;
-        } else if (participantes.tiempo < this.tiempo) {
             return -1;
+        } else if (participantes.tiempo < this.tiempo) {
+            return 1;
         }
         return 0;
     }
