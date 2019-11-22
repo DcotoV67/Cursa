@@ -7,6 +7,8 @@ public class Competicion {
 
     Scanner scanner = new Scanner(System.in);
     Jugador jugador = new Jugador();
+    Clasificacion clasificacion = new Clasificacion();
+
     Participantes participantes = new Participantes();
     Circuito circuito = new Circuito();
 
@@ -40,9 +42,11 @@ public class Competicion {
         for (int i = 0; i < qtadParticipantes; i++) {
 
             listaParticipantes.add(new Participantes());
+            clasificacion.clasificacionGeneral.add(new Participantes());
 
             if (i == 0) {
                 listaParticipantes.get(i).setNombre(jugador.nombre);
+
             } else {
                 listaParticipantes.get(i).setNombre("CPU " + i);
 

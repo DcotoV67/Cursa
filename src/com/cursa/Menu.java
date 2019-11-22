@@ -1,5 +1,6 @@
 package com.cursa;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
@@ -8,6 +9,7 @@ public class Menu {
 
         Scanner scanner = new Scanner(System.in);
 
+        Clasificacion clasificacion = new Clasificacion();
         Juego juego = new Juego();
         Competicion competicion = new Competicion();
         Jugador jugador = new Jugador();
@@ -38,11 +40,7 @@ public class Menu {
                 case 2:
                     System.out.println("Opción 2");
                     jugador.asignarVehiculo(competicion.listaParticipantes);
-                    for (int i = 0; i < competicion.qtadParticipantes; i++) {
-
-                        System.out.println(competicion.listaParticipantes.get(i).nombre +  " / " + competicion.listaParticipantes.get(i).vehiculo);
-
-                    }
+                    clasificacion.mostrarClasificacionGeneral(jugador.temp);
                     break;
 
                 case 3:

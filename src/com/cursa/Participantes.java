@@ -5,6 +5,7 @@ public class Participantes implements Comparable<Participantes>{
     String nombre;
     protected String vehiculo;
     private int puntuacion;
+    int posicion;
 
     void actualizarTiempo(){
         tiempo = Math.round(Math.random()*99+1);

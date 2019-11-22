@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Jugador{
+
+    ArrayList<Participantes> temp = new ArrayList<>();
+
     int posicion;
 
     String nombre = "";
@@ -57,8 +60,13 @@ public class Jugador{
         }
     }
 
-    void competir(Circuito[] listaCircuitos, ArrayList<Participantes> listaParticipantes){
+    ArrayList<Participantes> competir(Circuito[] listaCircuitos, ArrayList<Participantes> listaParticipantes){
 
+        Clasificacion clasificacion = new Clasificacion();
+
+        for (int j = 0; j < listaParticipantes.size(); j++) {
+            clasificacion.clasificacionGeneral.add(new Participantes());
+        }
 
         for (int i = 0; i < listaCircuitos.length; i++) {
             System.out.println(listaCircuitos[i].nombre);
@@ -68,6 +76,11 @@ public class Jugador{
             }
 
             listaParticipantes.sort(Participantes::compareTo);
+            for (int j = 0; j < listaParticipantes.size(); j++) {
+                clasificacion.clasificacionGeneral.get(j).setNombre(listaParticipantes.get(j).getNombre());
+
+            }
+
 
             for (int j = 0; j < listaParticipantes.size(); j++) {
 
@@ -76,26 +89,31 @@ public class Jugador{
                 switch (posicion) {
                     case 0:
                         listaParticipantes.get(j).setPuntuacion(16);
+                        clasificacion.clasificacionGeneral.get(j).setPuntuacion((clasificacion.clasificacionGeneral.get(j).getPuntuacion() + 16));
                         System.out.println(listaParticipantes.get(j).getNombre() + " -> " + listaParticipantes.get(j).getTiempo() + " -> " + listaParticipantes.get(j).getPuntuacion() + "pts");
                     break;
 
                     case 1:
                         listaParticipantes.get(j).setPuntuacion(12);
+                        clasificacion.clasificacionGeneral.get(j).setPuntuacion((clasificacion.clasificacionGeneral.get(j).getPuntuacion() + 12));
                         System.out.println(listaParticipantes.get(j).getNombre() + " -> " + listaParticipantes.get(j).getTiempo() + " -> " + listaParticipantes.get(j).getPuntuacion() + "pts");
                     break;
 
                     case 2:
                         listaParticipantes.get(j).setPuntuacion(8);
+                        clasificacion.clasificacionGeneral.get(j).setPuntuacion((clasificacion.clasificacionGeneral.get(j).getPuntuacion() + 8));
                         System.out.println(listaParticipantes.get(j).getNombre() + " -> " + listaParticipantes.get(j).getTiempo() + " -> " + listaParticipantes.get(j).getPuntuacion() + "pts");
                     break;
 
                     case 3:
                         listaParticipantes.get(j).setPuntuacion(4);
+                        clasificacion.clasificacionGeneral.get(j).setPuntuacion((clasificacion.clasificacionGeneral.get(j).getPuntuacion() + 4));
                         System.out.println(listaParticipantes.get(j).getNombre() + " -> " + listaParticipantes.get(j).getTiempo() + " -> " + listaParticipantes.get(j).getPuntuacion() + "pts");
                     break;
 
                     default:
                         listaParticipantes.get(j).setPuntuacion(2);
+                        clasificacion.clasificacionGeneral.get(j).setPuntuacion((clasificacion.clasificacionGeneral.get(j).getPuntuacion() + 2));
                         System.out.println(listaParticipantes.get(j).getNombre() + " -> " + listaParticipantes.get(j).getTiempo() + " -> " + listaParticipantes.get(j).getPuntuacion() + "pts");
                     break;
 
@@ -106,8 +124,15 @@ public class Jugador{
             System.out.println("---------------------");
 
         }
-
+        for (int i = 0; i < clasificacion.clasificacionGeneral.size(); i++) {
+            temp.add(new Participantes());
+        }
+        for (int i = 0; i < temp.size(); i++) {
+            temp.get(i).setNombre(clasificacion.clasificacionGeneral.get(i).getNombre());
+            temp.get(i).setPuntuacion(clasificacion.clasificacionGeneral.get(i).getPuntuacion());
+        }
         listaParticipantes.clear();
+        return temp;
     }
 
 }
